@@ -1,6 +1,6 @@
 <template>
   <div class="butn">
-    <button :class="title" >{{text}}</button>
+    <button >{{text}}</button>
   </div>
 </template>
 
@@ -14,10 +14,8 @@
   }
 </script>
 
-<style scoped>
-button:hover{
-background: #F87070;
-}
+<style scoped lang="css">
+
   button{
     padding: 12px;
     color:#fff;

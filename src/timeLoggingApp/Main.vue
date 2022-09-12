@@ -1,7 +1,8 @@
 <template>
   <div class="main">
     <Pomodro />
-    <Settings />
+    <Settings v-if="show" :show="show" @toggle-show="toggleShow"/>
+    <button class="button" @click="onClick">S</button>
   </div>
 </template> 
 
@@ -12,8 +13,21 @@ import Pomodro from './Pomodro.vue';
     name:'Main',
     components: {
     Settings,
-    Pomodro
-}
+    Pomodro,
+    },
+    data(){
+      return{
+        show: false
+      }
+    },
+    methods:{
+      onClick(){
+        this.show = !this.show
+      },
+      toggleShow(){
+        this.show = !this.show
+      }
+    }
   }
 </script>
 
@@ -25,7 +39,7 @@ import Pomodro from './Pomodro.vue';
 }
 body{
   background: #1E213F;
-  color: #fff,#161932,#EFF1FA;
+  color: #fff,#EFF1FA;
   font-family: sans-serif;
 }
   .main{
@@ -40,6 +54,13 @@ body{
     color:#EFF1FA;
   }
   .main button{
-    color:red
+    color:#EFF1FA;
+  }
+  .button{
+    font-size:22px;
+    cursor: pointer;
+    border:none;
+    outline: none;
+    background: transparent;
   }
 </style>
